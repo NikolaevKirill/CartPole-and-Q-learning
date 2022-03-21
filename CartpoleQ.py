@@ -355,9 +355,10 @@ class CartPole:
 
         return solution
 
-    def plotting(self):
+    def plotting(self, file_name="free-cart.gif"):
         """
         Функция сохраняет в директории с файлом gif с последней сыгранной игрой. Смотреть latest_solution
+        :param file_name: str, название файла с расширением gif
         """
 
         if self.latest_solution is None:
@@ -417,7 +418,7 @@ class CartPole:
 
         writer_ = animation.writers["pillow"]
         writer = writer_(fps=25, bitrate=1800)
-        ani.save("free-cart.gif", writer=writer)
+        ani.save(file_name, writer=writer)
 
 
 class Qagent:
